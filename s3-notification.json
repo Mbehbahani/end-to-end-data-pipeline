@@ -1,0 +1,22 @@
+{
+    "LambdaFunctionConfigurations": [
+        {
+            "LambdaFunctionArn": "arn:aws:lambda:eu-central-1:780822965578:function:ghactivity-transformer",
+            "Events": ["s3:ObjectCreated:*"],
+            "Filter": {
+                "Key": {
+                    "FilterRules": [
+                        {
+                            "Name": "prefix",
+                            "Value": "landing/ghactivity/"
+                        },
+                        {
+                            "Name": "suffix",
+                            "Value": ".json.gz"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}
